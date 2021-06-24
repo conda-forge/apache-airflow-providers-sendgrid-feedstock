@@ -40,6 +40,7 @@ Installing `apache-airflow-providers-sendgrid` from the `conda-forge` channel ca
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `apache-airflow-providers-sendgrid` can be installed with:

@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-sendgrid" %}
-{% set version = "2.0.0" %}
+{% set version = "2.0.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-sendgrid-{{ version }}.tar.gz
-  sha256: e4e6183582615044c5c530b8225ebe96ed32c9b4c96a3ad095e6b3ef45645984
+  sha256: e83f62fc9479a9cada2f2b67a97880527ee87ede72e198aeba57634e282b7d12
 
 build:
   number: 0

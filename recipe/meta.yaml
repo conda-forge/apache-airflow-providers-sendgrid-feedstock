@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-sendgrid" %}
-{% set version = "3.0.0" %}
+{% set version = "3.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/apache-airflow-providers-sendgrid-{{ version }}.tar.gz
-  sha256: 5180179de6305cf5786870bf99823c5e9699d484cec458ebb566f29285183ad8
+  sha256: 71fd3fee6cde87afacbf372cbdd0691cb67bb07bf97059f55e75017f63bcd59e
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
     - setuptools
   run:
     - python >=3.7
-    - apache-airflow >=2.2.0
+    - apache-airflow >=2.3.0
     - sendgrid >=6.0.0
 
 test:

@@ -1,13 +1,13 @@
 {% set name = "apache-airflow-providers-sendgrid" %}
-{% set version = "4.0.0" %}
+{% set version = "4.0.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 7300ee5904e821ba20fabf14145ffaf6996bc5e317824affe97ff8ef98c9c916
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_sendgrid-{{ version }}.tar.gz
+  sha256: 00b28322172e39126992f0dbcbe45ffc5e6f5d24aa7a38bf74e314698b5fd900
 
 build:
   noarch: python
@@ -17,7 +17,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - flit-core ==3.10.0
+    - flit-core ==3.11.0
     - pip
   run:
     - python >={{ python_min }},<4.dev0
@@ -37,7 +37,7 @@ about:
   home: https://github.com/apache/airflow/
   summary: Provider package apache-airflow-providers-sendgrid for Apache Airflow
   license: Apache-2.0
-  license_file: airflow/providers/sendgrid/LICENSE
+  license_file: src/airflow/providers/sendgrid/LICENSE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-sendgrid/stable/index.html
   dev_url: https://github.com/apache/airflow/

@@ -22,9 +22,8 @@ requirements:
   run:
     - python >={{ python_min }},<4.dev0
     - apache-airflow >=2.10.0
-    - ecdsa >=0.19.1,<1
+    # no way to stay noarch: python and satisfy requirements.  Using python <3.12 for now.
     - sendgrid >=6.12.3
-    - werkzeug >=2.2,<4
 test:
   imports:
     - airflow.providers.sendgrid

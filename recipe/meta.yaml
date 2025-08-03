@@ -1,5 +1,5 @@
 {% set name = "apache-airflow-providers-sendgrid" %}
-{% set version = "4.1.2" %}
+{% set version = "4.1.3" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_sendgrid-{{ version }}.tar.gz
-  sha256: a47d6d0ad9a90cc8c5122e1b6a35f0f01cc0db9949ca51e41b461da9a2c02d30
+  sha256: 9214934de3b7545fe2e7614153b085860ae36f508e7d514dbb9825f25159fc4c
 
 build:
   noarch: python
@@ -21,10 +21,12 @@ requirements:
     - flit-core ==3.12.0
     - pip
   run:
-    - python >={{ python_min }},<4.dev0
+    - python >={{ python_min }}
     - apache-airflow >=2.10.0
     # no way to stay noarch: python and satisfy requirements.  Using python <3.12 for now.
     - sendgrid >=6.12.3
+    # only for python >= 3.12 but staying noarch: python
+    - werkzeug >=2.2,<4
 test:
   imports:
     - airflow.providers.sendgrid

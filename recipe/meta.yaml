@@ -1,6 +1,5 @@
 {% set name = "apache-airflow-providers-sendgrid" %}
-{% set version = "4.1.4" %}
-{% set python_min = "3.10" %}
+{% set version = "4.1.5" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/apache_airflow_providers_sendgrid-{{ version }}.tar.gz
-  sha256: f08c8ddde54504d06b0f2e3eeaac6cfc402661a27bf960a21ed1a06f355e94e4
+  sha256: 8860d0eeca7f08144c65b80afb062b7ec2834214ea2010f18574e4ea8d8787e5
 
 build:
   noarch: python
@@ -24,10 +23,11 @@ requirements:
     - python >={{ python_min }}
     - apache-airflow >=2.10.0
     - apache-airflow-providers-common-compat >=1.8.0
-    # no way to stay noarch: python and satisfy requirements.  Using python <3.12 for now.
+    # more restrictive for python <3.12
     - sendgrid >=6.12.3
-    # only for python >= 3.12 but staying noarch: python
-    - werkzeug >=2.2,<4
+    # more restrictive for python >=3.12
+    - werkzeug >=2.2
+
 test:
   imports:
     - airflow.providers.sendgrid
@@ -41,7 +41,9 @@ about:
   home: https://github.com/apache/airflow/
   summary: Provider package apache-airflow-providers-sendgrid for Apache Airflow
   license: Apache-2.0
-  license_file: src/airflow/providers/sendgrid/LICENSE
+  license_file:
+    - LICENSE
+    - NOTICE
   license_family: Apache
   doc_url: https://airflow.apache.org/docs/apache-airflow-providers-sendgrid/stable/index.html
   dev_url: https://github.com/apache/airflow/

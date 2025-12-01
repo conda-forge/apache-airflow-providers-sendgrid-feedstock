@@ -26,7 +26,7 @@ requirements:
     # more restrictive for python <3.12
     - sendgrid >=6.12.3
     # more restrictive for python >=3.12
-    - werkzeug >=2.2
+    - werkzeug >=2.2,<4
 
 test:
   imports:

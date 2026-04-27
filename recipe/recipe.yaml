@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-sendgrid
-  version: 4.2.3
+  version: "4.2.3"
 
 package:
   name: ${{ name|lower }}
@@ -25,12 +25,15 @@ requirements:
     - apache-airflow >=2.11.0
     - apache-airflow-providers-common-compat >=1.8.0
     - sendgrid >=6.12.5
+
 tests:
   - python:
       imports:
         - airflow.providers.sendgrid
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
 
 about:
   homepage: https://github.com/apache/airflow/

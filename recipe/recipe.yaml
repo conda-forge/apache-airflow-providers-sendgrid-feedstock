@@ -1,6 +1,6 @@
 context:
   name: apache-airflow-providers-sendgrid
-  version: "4.2.4"
+  version: "4.2.5"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/apache_airflow_providers_sendgrid-${{ version }}.tar.gz
-  sha256: b015cf056c0c1c5c24ce85d78871d148cdc42748a55ae35772acd40ae64c2aaa
+  sha256: a404e6054da6bdf82d9b9211e20779774e9bccdd9e3e4f06f0605be2f6a1a8e1
 
 build:
   noarch: python
